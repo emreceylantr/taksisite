@@ -9,16 +9,16 @@ const ServiceMap = dynamic(() => import("./ServiceMap"), {
 
 export default function MapSection() {
   return (
-    <section id="harita" className="bg-zinc-100 px-5 py-20 text-zinc-950 sm:px-8">
+    <section id="harita" className="bg-zinc-100 px-4 py-14 text-zinc-950 sm:px-6 sm:py-18 lg:px-8 lg:py-20">
       <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
         <div>
           <p className="text-sm font-bold uppercase tracking-wide text-yellow-700">
             Konum
           </p>
-          <h2 className="mt-3 text-4xl font-black tracking-normal">
+          <h2 className="mt-3 text-3xl font-black leading-tight tracking-normal sm:text-4xl">
             Soli Taksi konumu Mersin içinde kolayca ulaşılabilir.
           </h2>
-          <p className="mt-5 max-w-xl text-lg leading-8 text-zinc-600">
+          <p className="mt-5 max-w-xl text-base leading-7 text-zinc-600 sm:text-lg sm:leading-8">
             Mersin genelindeki şehir içi yolculuk ve transfer talepleri için
             konumumuzu harita üzerinden görüntüleyebilirsiniz.
           </p>

@@ -43,20 +43,20 @@ const steps = [
 
 export default function Home() {
   return (
-    <main className="min-h-[100dvh] bg-zinc-950 text-white">
-      <section className="relative isolate min-h-[92dvh] overflow-hidden sm:min-h-[92vh]">
+    <main className="min-h-[100dvh] overflow-x-hidden bg-zinc-950 text-white">
+      <section className="relative isolate min-h-[100svh] overflow-hidden lg:min-h-[92vh]">
         <Image
           src="/taxi-hero.png"
           alt="Soli Taksi aracı şehir caddesinde"
           fill
           priority
-          className="object-cover object-center"
+          className="object-cover object-[58%_center] sm:object-center"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(9,9,11,0.94)_0%,rgba(9,9,11,0.76)_44%,rgba(9,9,11,0.3)_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(9,9,11,0.94)_0%,rgba(9,9,11,0.76)_48%,rgba(9,9,11,0.88)_100%)] lg:bg-[linear-gradient(90deg,rgba(9,9,11,0.95)_0%,rgba(9,9,11,0.74)_46%,rgba(9,9,11,0.24)_100%)]" />
 
-        <header className="relative z-10 mx-auto w-full max-w-7xl px-5 py-5 sm:px-8">
-          <div className="flex items-center justify-between gap-3 rounded border border-white/10 bg-zinc-950/45 px-4 py-3 backdrop-blur-md sm:gap-4">
+        <header className="relative z-10 mx-auto w-full max-w-7xl px-4 py-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between gap-2 rounded border border-white/10 bg-zinc-950/58 px-3 py-3 backdrop-blur-md sm:gap-4 sm:px-4">
             <a
               href="#"
               className="flex min-h-11 min-w-0 items-center gap-3"
@@ -69,7 +69,6 @@ export default function Home() {
                 Soli Taksi
               </span>
             </a>
-            <MobileNav />
             <nav className="hidden items-center gap-6 text-sm font-medium text-zinc-100 lg:flex">
               <a className="transition hover:text-yellow-300" href="#hizmetler">
                 Hizmetler
@@ -87,54 +86,55 @@ export default function Home() {
                 İletişim
               </a>
             </nav>
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2 sm:gap-3">
               <span className="hidden rounded border border-white/10 px-3 py-2 text-xs font-semibold text-zinc-200 xl:inline-flex">
                 Mersin 7/24
               </span>
               <a
                 href={whatsappHref}
-                className="grid min-h-11 place-items-center rounded bg-yellow-400 px-4 text-sm font-bold text-zinc-950 transition hover:bg-yellow-300"
+                className="hidden min-h-11 place-items-center rounded bg-yellow-400 px-4 text-sm font-bold text-zinc-950 transition hover:bg-yellow-300 min-[380px]:grid"
               >
                 WhatsApp
               </a>
+              <MobileNav />
             </div>
           </div>
         </header>
 
-        <div className="relative z-10 mx-auto flex min-h-[calc(92svh-92px)] w-full max-w-7xl items-center px-5 pb-16 pt-10 sm:min-h-[calc(92vh-92px)] sm:px-8">
-          <div className="max-w-2xl rounded border border-white/10 bg-white/10 p-5 backdrop-blur-md sm:p-8">
-            <p className="mb-5 inline-flex rounded bg-yellow-400/15 px-3 py-1 text-xs font-semibold text-yellow-200 md:text-sm">
+        <div className="relative z-10 mx-auto flex min-h-[calc(100svh-84px)] w-full max-w-7xl items-end px-4 pb-10 pt-12 sm:px-6 md:items-center lg:min-h-[calc(92vh-92px)] lg:px-8 lg:pb-16 lg:pt-10">
+          <div className="w-full max-w-2xl py-4 sm:py-8">
+            <p className="mb-4 inline-flex rounded bg-yellow-400/15 px-3 py-1 text-xs font-semibold text-yellow-200 ring-1 ring-yellow-300/20 sm:mb-5 md:text-sm">
               Mersin için planlı ve güvenilir taksi
             </p>
-            <h1 className="max-w-3xl text-5xl font-black leading-[1.1] tracking-normal md:text-7xl">
-              Sade, temiz ve zamanında taksi hizmeti.<br className="hidden md:block" />
+            <h1 className="max-w-3xl text-[clamp(2.45rem,13vw,4.8rem)] font-black leading-[1.02] tracking-normal sm:text-6xl lg:text-7xl">
+              Sade, temiz ve zamanında taksi hizmeti.
             </h1>
-            <p className="mt-6 max-w-xl text-sm leading-8 text-zinc-200 md:text-lg">
+            <p className="mt-5 max-w-xl text-base leading-7 text-zinc-200 sm:mt-6 md:text-lg md:leading-8">
               Soli Taksi; şehir içi yolculuk, havalimanı transferi ve kurumsal
               ulaşım için net iletişim, temiz araç ve zamanında varış odaklı
               servis sunar.
             </p>
-            <div className="mt-8 flex flex-col w-full gap-3 sm:flex-row sm:w-auto">
+            <div className="mt-7 flex w-full flex-col gap-3 min-[460px]:flex-row sm:w-auto">
               <a
                 href={whatsappHref}
-                className="rounded bg-yellow-400 px-6 py-4 text-center font-bold text-zinc-950 transition hover:bg-yellow-300 w-full sm:w-auto"
+                className="w-full rounded bg-yellow-400 px-6 py-4 text-center font-bold text-zinc-950 transition hover:bg-yellow-300 min-[460px]:w-auto"
               >
                 Taksi çağır
               </a>
               <a
                 href="#hizmetler"
-                className="rounded border border-white/25 bg-white/5 px-6 py-4 text-center font-bold text-white transition hover:border-yellow-300 hover:text-yellow-200 w-full sm:w-auto"
+                className="w-full rounded border border-white/25 bg-white/5 px-6 py-4 text-center font-bold text-white transition hover:border-yellow-300 hover:text-yellow-200 min-[460px]:w-auto"
               >
                 Hizmetleri gör
               </a>
             </div>
-            <dl className="mt-10 grid max-w-xl grid-cols-3 gap-2 md:gap-3">
+            <dl className="mt-8 grid max-w-xl grid-cols-3 gap-2 md:mt-10 md:gap-3">
               {stats.map(([value, label]) => (
-                <div key={label} className="border-l border-yellow-300/70 pl-3 md:pl-4">
-                  <dt className="text-lg font-black text-yellow-300 md:text-2xl">
+                <div key={label} className="rounded border border-white/10 bg-white/8 p-2 backdrop-blur-sm sm:p-3 md:p-4">
+                  <dt className="text-lg font-black text-yellow-300 sm:text-xl md:text-2xl">
                     {value}
                   </dt>
-                  <dd className="mt-1 text-[10px] font-medium uppercase tracking-wide text-zinc-300 md:text-xs">
+                  <dd className="mt-1 text-[9px] font-semibold uppercase leading-snug tracking-wide text-zinc-300 min-[360px]:text-[10px] md:text-xs">
                     {label}
                   </dd>
                 </div>
@@ -144,14 +144,14 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="hizmetler" className="bg-white px-5 py-20 text-zinc-950 sm:px-8">
+      <section id="hizmetler" className="bg-white px-4 py-14 text-zinc-950 sm:px-6 sm:py-18 lg:px-8 lg:py-20">
         <div className="mx-auto max-w-7xl">
           <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
             <div>
               <p className="text-sm font-bold uppercase tracking-wide text-yellow-700">
                 Hizmetler
               </p>
-              <h2 className="mt-3 max-w-2xl text-4xl font-black tracking-normal">
+              <h2 className="mt-3 max-w-2xl text-3xl font-black leading-tight tracking-normal sm:text-4xl">
                 Taksi ihtiyacı için net ve pratik çözümler.
               </h2>
             </div>
@@ -161,11 +161,11 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="mt-12 grid gap-4 md:grid-cols-3">
+          <div className="mt-10 grid gap-4 md:mt-12 md:grid-cols-3">
             {services.map((service, index) => (
               <Reveal key={service.title} delay={index * 0.08}>
                 <article
-                  className="rounded border border-zinc-200 bg-zinc-50 p-6"
+                  className="h-full rounded border border-zinc-200 bg-zinc-50 p-5 sm:p-6"
                 >
                   <span className="text-sm font-black text-yellow-700">
                     0{index + 1}
@@ -179,16 +179,16 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="standart" className="bg-zinc-100 px-5 py-20 text-zinc-950 sm:px-8">
+      <section id="standart" className="bg-zinc-100 px-4 py-14 text-zinc-950 sm:px-6 sm:py-18 lg:px-8 lg:py-20">
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
           <div>
             <p className="text-sm font-bold uppercase tracking-wide text-yellow-700">
               Soli standardı
             </p>
-            <h2 className="mt-3 text-4xl font-black tracking-normal">
+            <h2 className="mt-3 text-3xl font-black leading-tight tracking-normal sm:text-4xl">
               Yolculuk öncesinden varışa kadar özenli hizmet.
             </h2>
-            <p className="mt-5 max-w-xl text-lg leading-8 text-zinc-600">
+            <p className="mt-5 max-w-xl text-base leading-7 text-zinc-600 sm:text-lg sm:leading-8">
               Soli Taksi, temiz araç, net iletişim ve zaman planlamasıyla
               yolculuğunuzu daha konforlu ve güvenilir hale getirir.
             </p>
@@ -206,12 +206,12 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="surec" className="bg-white px-5 py-20 text-zinc-950 sm:px-8">
+      <section id="surec" className="bg-white px-4 py-14 text-zinc-950 sm:px-6 sm:py-18 lg:px-8 lg:py-20">
         <div className="mx-auto max-w-7xl">
           <p className="text-sm font-bold uppercase tracking-wide text-yellow-700">
             Süreç
           </p>
-          <h2 className="mt-3 max-w-2xl text-4xl font-black tracking-normal">
+          <h2 className="mt-3 max-w-2xl text-3xl font-black leading-tight tracking-normal sm:text-4xl">
             Yolculuk talebi sade ilerler.
           </h2>
           <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
@@ -231,14 +231,14 @@ export default function Home() {
 
       <MapSection />
 
-      <section id="iletisim" className="bg-yellow-400 px-5 py-16 text-zinc-950 sm:px-8">
+      <section id="iletisim" className="bg-yellow-400 px-4 py-14 text-zinc-950 sm:px-6 lg:px-8 lg:py-16">
         <div className="mx-auto flex max-w-7xl flex-col justify-between gap-8 md:flex-row md:items-center">
           <div>
             <p className="text-sm font-bold uppercase tracking-wide">İletişim</p>
-            <h2 className="mt-3 text-4xl font-black tracking-normal">
+            <h2 className="mt-3 text-3xl font-black leading-tight tracking-normal sm:text-4xl">
               Soli Taksi ile yola çıkın.
             </h2>
-            <p className="mt-4 max-w-xl text-lg leading-8">
+            <p className="mt-4 max-w-xl text-base leading-7 sm:text-lg sm:leading-8">
               Konumunuzu, varış noktanızı ve yolculuk saatinizi iletin; size
               uygun yönlendirmeyi yapalım.
             </p>

@@ -14,7 +14,7 @@ const markerIcon = L.divIcon({
 
 export default function ServiceMap() {
   return (
-    <div className="h-[360px] overflow-hidden rounded border border-zinc-200 bg-zinc-100 sm:h-[400px] lg:h-[450px]">
+    <div className="h-[320px] overflow-hidden rounded border border-zinc-200 bg-zinc-100 sm:h-[400px] lg:h-[450px]">
       <MapContainer
         center={center}
         zoom={14}

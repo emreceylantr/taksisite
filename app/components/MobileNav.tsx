@@ -18,11 +18,12 @@ export default function MobileNav() {
     <div className="lg:hidden">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="text-white p-2 z-30 relative"
-        aria-label="Menü"
+        className="relative z-[60] grid h-11 w-11 place-items-center rounded border border-white/15 bg-white/10 text-white backdrop-blur transition hover:border-yellow-300 hover:text-yellow-200"
+        aria-label={isOpen ? "Menüyü kapat" : "Menüyü aç"}
+        aria-expanded={isOpen}
       >
         <svg
-          className="w-6 h-6"
+          className="h-5 w-5"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -31,7 +32,7 @@ export default function MobileNav() {
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth={2}
-            d="M4 6h16M4 12h16M4 18h16"
+            d={isOpen ? "M6 18 18 6M6 6l12 12" : "M4 7h16M4 12h16M4 17h16"}
           />
         </svg>
       </button>
@@ -45,23 +46,22 @@ export default function MobileNav() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setIsOpen(false)}
-              className="fixed inset-0 bg-black/50 backdrop-blur-sm z-20"
+              className="fixed inset-0 z-40 bg-zinc-950/70 backdrop-blur-sm"
             />
-            
-            {/* Mobile Menu */}
+
             <motion.div
-              initial={{ opacity: 0, y: -20 }}
+              initial={{ opacity: 0, y: -12 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              className="fixed top-0 left-0 right-0 z-30 bg-white shadow-2xl rounded-b-2xl"
+              exit={{ opacity: 0, y: -12 }}
+              className="fixed left-3 right-3 top-20 z-50 overflow-hidden rounded border border-white/10 bg-zinc-950 shadow-2xl"
             >
-              <nav className="flex flex-col p-6 pt-12">
+              <nav className="flex flex-col p-2">
                 {navItems.map((item) => (
                   <a
                     key={item.href}
                     href={item.href}
                     onClick={() => setIsOpen(false)}
-                    className="py-4 px-2 text-base font-medium text-gray-900 hover:bg-yellow-50 hover:text-yellow-600 rounded-lg transition-all duration-200 border-b border-gray-100 last:border-b-0"
+                    className="rounded px-4 py-4 text-base font-semibold text-zinc-100 transition hover:bg-yellow-400 hover:text-zinc-950"
                   >
                     {item.label}
                   </a>
