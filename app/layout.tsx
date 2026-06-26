@@ -14,21 +14,24 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://solitaksii.com"),
+  metadataBase: new URL("https://www.solitaksii.com"),
   title: "Soli Taksi | Premium Taksi ve Transfer",
   description:
     "Mersin şehir içi yolculuk, havalimanı transferi ve kurumsal ulaşım için planlı ve güvenilir taksi hizmeti.",
+  alternates: {
+    canonical: "https://www.solitaksii.com",
+  },
   openGraph: {
     title: "Soli Taksi | Premium Taksi ve Transfer",
     description:
       "Mersin şehir içi yolculuk, havalimanı transferi ve kurumsal ulaşım için planlı ve güvenilir taksi hizmeti.",
-    url: "https://solitaksii.com",
+    url: "https://www.solitaksii.com",
     siteName: "Soli Taksi",
     images: [
       {
-        url: "/taxi-hero.png",
-        width: 1774,
-        height: 887,
+        url: "/soli-taksi-preview.jpg",
+        width: 1200,
+        height: 600,
         alt: "Soli Taksi aracı şehir caddesinde",
       },
     ],
@@ -40,7 +43,7 @@ export const metadata: Metadata = {
     title: "Soli Taksi | Premium Taksi ve Transfer",
     description:
       "Mersin şehir içi yolculuk, havalimanı transferi ve kurumsal ulaşım için planlı ve güvenilir taksi hizmeti.",
-    images: ["/taxi-hero.png"],
+    images: ["/soli-taksi-preview.jpg"],
   },
 };
 
