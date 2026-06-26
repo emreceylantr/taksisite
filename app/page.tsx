@@ -44,7 +44,7 @@ const steps = [
 export default function Home() {
   return (
     <main className="min-h-[100dvh] overflow-x-hidden bg-zinc-950 text-white">
-      <section className="relative isolate min-h-[100svh] overflow-hidden lg:min-h-[92vh]">
+      <section className="relative isolate min-h-[calc(100svh+96px)] overflow-hidden lg:min-h-[92vh]">
         <Image
           src="/taxi-hero.png"
           alt="Soli Taksi aracı şehir caddesinde"
@@ -55,7 +55,7 @@ export default function Home() {
         />
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(9,9,11,0.9)_0%,rgba(9,9,11,0.54)_34%,rgba(9,9,11,0.78)_100%)] lg:bg-[linear-gradient(90deg,rgba(9,9,11,0.95)_0%,rgba(9,9,11,0.74)_46%,rgba(9,9,11,0.24)_100%)]" />
 
-        <header className="relative z-10 mx-auto w-full max-w-7xl px-4 py-3 sm:px-6 lg:px-8 lg:py-4">
+        <header className="relative z-[80] mx-auto w-full max-w-7xl px-4 py-3 sm:px-6 lg:px-8 lg:py-4">
           <div className="flex items-center justify-between gap-2 rounded border border-white/10 bg-zinc-950/62 px-3 py-2.5 backdrop-blur-md sm:gap-4 sm:px-4 sm:py-3">
             <a
               href="#"

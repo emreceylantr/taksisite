@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import type { PointerEvent } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navItems = [
@@ -13,6 +14,26 @@ const navItems = [
 
 export default function MobileNav() {
   const [isOpen, setIsOpen] = useState(false);
+
+  const scrollToSection = (href: string) => {
+    setIsOpen(false);
+
+    window.setTimeout(() => {
+      const target = document.querySelector(href);
+      if (!target) return;
+
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+      window.history.pushState(null, "", href);
+    }, 120);
+  };
+
+  const handleSectionPress = (
+    event: PointerEvent<HTMLButtonElement>,
+    href: string,
+  ) => {
+    event.preventDefault();
+    scrollToSection(href);
+  };
 
   return (
     <div className="lg:hidden">
@@ -57,14 +78,15 @@ export default function MobileNav() {
             >
               <nav className="grid grid-cols-2 gap-2 p-2">
                 {navItems.map((item) => (
-                  <a
+                  <button
                     key={item.href}
-                    href={item.href}
-                    onClick={() => setIsOpen(false)}
+                    type="button"
+                    onPointerDown={(event) => handleSectionPress(event, item.href)}
+                    onClick={() => scrollToSection(item.href)}
                     className="rounded bg-white/5 px-3 py-3 text-center text-sm font-semibold text-zinc-100 transition hover:bg-yellow-400 hover:text-zinc-950"
                   >
                     {item.label}
-                  </a>
+                  </button>
                 ))}
               </nav>
             </motion.div>
