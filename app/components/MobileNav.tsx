@@ -18,7 +18,7 @@ export default function MobileNav() {
     <div className="lg:hidden">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="relative z-[60] grid h-11 w-11 place-items-center rounded border border-white/15 bg-white/10 text-white backdrop-blur transition hover:border-yellow-300 hover:text-yellow-200"
+        className="relative z-[60] grid h-10 w-10 place-items-center rounded border border-white/15 bg-white/10 text-white backdrop-blur transition hover:border-yellow-300 hover:text-yellow-200 sm:h-11 sm:w-11"
         aria-label={isOpen ? "Menüyü kapat" : "Menüyü aç"}
         aria-expanded={isOpen}
       >
@@ -46,22 +46,22 @@ export default function MobileNav() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setIsOpen(false)}
-              className="fixed inset-0 z-40 bg-zinc-950/70 backdrop-blur-sm"
+              className="fixed inset-0 z-40 bg-zinc-950/80 backdrop-blur-sm"
             />
 
             <motion.div
               initial={{ opacity: 0, y: -12 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -12 }}
-              className="fixed left-3 right-3 top-20 z-50 overflow-hidden rounded border border-white/10 bg-zinc-950 shadow-2xl"
+              className="fixed left-4 right-4 top-20 z-50 overflow-hidden rounded border border-white/10 bg-zinc-950 shadow-2xl sm:left-6 sm:right-6"
             >
-              <nav className="flex flex-col p-2">
+              <nav className="grid grid-cols-2 gap-2 p-2">
                 {navItems.map((item) => (
                   <a
                     key={item.href}
                     href={item.href}
                     onClick={() => setIsOpen(false)}
-                    className="rounded px-4 py-4 text-base font-semibold text-zinc-100 transition hover:bg-yellow-400 hover:text-zinc-950"
+                    className="rounded bg-white/5 px-3 py-3 text-center text-sm font-semibold text-zinc-100 transition hover:bg-yellow-400 hover:text-zinc-950"
                   >
                     {item.label}
                   </a>

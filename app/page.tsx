@@ -50,22 +50,22 @@ export default function Home() {
           alt="Soli Taksi aracı şehir caddesinde"
           fill
           priority
-          className="object-cover object-[58%_center] sm:object-center"
+          className="object-cover object-[54%_center] sm:object-center"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(9,9,11,0.94)_0%,rgba(9,9,11,0.76)_48%,rgba(9,9,11,0.88)_100%)] lg:bg-[linear-gradient(90deg,rgba(9,9,11,0.95)_0%,rgba(9,9,11,0.74)_46%,rgba(9,9,11,0.24)_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(9,9,11,0.9)_0%,rgba(9,9,11,0.54)_34%,rgba(9,9,11,0.78)_100%)] lg:bg-[linear-gradient(90deg,rgba(9,9,11,0.95)_0%,rgba(9,9,11,0.74)_46%,rgba(9,9,11,0.24)_100%)]" />
 
-        <header className="relative z-10 mx-auto w-full max-w-7xl px-4 py-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between gap-2 rounded border border-white/10 bg-zinc-950/58 px-3 py-3 backdrop-blur-md sm:gap-4 sm:px-4">
+        <header className="relative z-10 mx-auto w-full max-w-7xl px-4 py-3 sm:px-6 lg:px-8 lg:py-4">
+          <div className="flex items-center justify-between gap-2 rounded border border-white/10 bg-zinc-950/62 px-3 py-2.5 backdrop-blur-md sm:gap-4 sm:px-4 sm:py-3">
             <a
               href="#"
-              className="flex min-h-11 min-w-0 items-center gap-3"
+              className="flex min-h-10 min-w-0 items-center gap-2.5 sm:min-h-11 sm:gap-3"
               aria-label="Soli Taksi ana sayfa"
             >
-              <span className="grid h-10 w-10 shrink-0 place-items-center rounded bg-yellow-400 font-black text-zinc-950">
+              <span className="grid h-9 w-9 shrink-0 place-items-center rounded bg-yellow-400 text-sm font-black text-zinc-950 sm:h-10 sm:w-10 sm:text-base">
                 S
               </span>
-              <span className="text-base font-bold leading-tight tracking-wide min-[360px]:text-lg">
+              <span className="text-base font-bold leading-tight tracking-wide sm:text-lg">
                 Soli Taksi
               </span>
             </a>
@@ -92,7 +92,7 @@ export default function Home() {
               </span>
               <a
                 href={whatsappHref}
-                className="hidden min-h-11 place-items-center rounded bg-yellow-400 px-4 text-sm font-bold text-zinc-950 transition hover:bg-yellow-300 min-[380px]:grid"
+                className="grid min-h-10 place-items-center rounded bg-yellow-400 px-3 text-sm font-bold text-zinc-950 transition hover:bg-yellow-300 sm:min-h-11 sm:px-4"
               >
                 WhatsApp
               </a>
@@ -101,40 +101,46 @@ export default function Home() {
           </div>
         </header>
 
-        <div className="relative z-10 mx-auto flex min-h-[calc(100svh-84px)] w-full max-w-7xl items-end px-4 pb-10 pt-12 sm:px-6 md:items-center lg:min-h-[calc(92vh-92px)] lg:px-8 lg:pb-16 lg:pt-10">
-          <div className="w-full max-w-2xl py-4 sm:py-8">
-            <p className="mb-4 inline-flex rounded bg-yellow-400/15 px-3 py-1 text-xs font-semibold text-yellow-200 ring-1 ring-yellow-300/20 sm:mb-5 md:text-sm">
+        <div className="relative z-10 mx-auto flex min-h-[calc(100svh-76px)] w-full max-w-7xl items-end px-4 pb-[max(1.25rem,env(safe-area-inset-bottom))] pt-8 sm:px-6 md:items-center lg:min-h-[calc(92vh-92px)] lg:px-8 lg:pb-16 lg:pt-10">
+          <div className="w-full max-w-2xl pb-3 pt-28 sm:py-8 lg:pt-8">
+            <p className="mb-3 inline-flex rounded bg-yellow-400/15 px-3 py-1 text-[11px] font-semibold text-yellow-200 ring-1 ring-yellow-300/20 sm:mb-5 sm:text-xs md:text-sm">
               Mersin için planlı ve güvenilir taksi
             </p>
-            <h1 className="max-w-3xl text-[clamp(2.45rem,13vw,4.8rem)] font-black leading-[1.02] tracking-normal sm:text-6xl lg:text-7xl">
+            <h1 className="max-w-3xl text-[clamp(2.2rem,10vw,3.35rem)] font-black leading-[1.04] tracking-normal sm:text-6xl lg:text-7xl">
               Sade, temiz ve zamanında taksi hizmeti.
             </h1>
-            <p className="mt-5 max-w-xl text-base leading-7 text-zinc-200 sm:mt-6 md:text-lg md:leading-8">
+            <p className="mt-4 max-w-xl text-sm leading-6 text-zinc-200 sm:mt-6 sm:text-base md:text-lg md:leading-8">
               Soli Taksi; şehir içi yolculuk, havalimanı transferi ve kurumsal
               ulaşım için net iletişim, temiz araç ve zamanında varış odaklı
               servis sunar.
             </p>
-            <div className="mt-7 flex w-full flex-col gap-3 min-[460px]:flex-row sm:w-auto">
+            <div className="mt-5 flex w-full gap-2 min-[460px]:flex-row sm:mt-7 sm:w-auto sm:gap-3">
               <a
                 href={whatsappHref}
-                className="w-full rounded bg-yellow-400 px-6 py-4 text-center font-bold text-zinc-950 transition hover:bg-yellow-300 min-[460px]:w-auto"
+                className="flex-1 rounded bg-yellow-400 px-4 py-3.5 text-center text-sm font-bold text-zinc-950 transition hover:bg-yellow-300 sm:flex-none sm:px-6 sm:py-4 sm:text-base"
               >
                 Taksi çağır
               </a>
               <a
+                href="tel:+905550331175"
+                className="flex-1 rounded border border-white/25 bg-white/5 px-4 py-3.5 text-center text-sm font-bold text-white transition hover:border-yellow-300 hover:text-yellow-200 sm:hidden"
+              >
+                Telefonla ara
+              </a>
+              <a
                 href="#hizmetler"
-                className="w-full rounded border border-white/25 bg-white/5 px-6 py-4 text-center font-bold text-white transition hover:border-yellow-300 hover:text-yellow-200 min-[460px]:w-auto"
+                className="hidden rounded border border-white/25 bg-white/5 px-6 py-4 text-center font-bold text-white transition hover:border-yellow-300 hover:text-yellow-200 sm:inline-flex"
               >
                 Hizmetleri gör
               </a>
             </div>
-            <dl className="mt-8 grid max-w-xl grid-cols-3 gap-2 md:mt-10 md:gap-3">
+            <dl className="mt-8 hidden max-w-xl grid-cols-3 gap-2 sm:grid md:mt-10 md:gap-3">
               {stats.map(([value, label]) => (
                 <div key={label} className="rounded border border-white/10 bg-white/8 p-2 backdrop-blur-sm sm:p-3 md:p-4">
-                  <dt className="text-lg font-black text-yellow-300 sm:text-xl md:text-2xl">
+                  <dt className="text-base font-black text-yellow-300 sm:text-xl md:text-2xl">
                     {value}
                   </dt>
-                  <dd className="mt-1 text-[9px] font-semibold uppercase leading-snug tracking-wide text-zinc-300 min-[360px]:text-[10px] md:text-xs">
+                  <dd className="mt-1 text-[8px] font-semibold uppercase leading-snug tracking-wide text-zinc-300 min-[360px]:text-[9px] sm:text-[10px] md:text-xs">
                     {label}
                   </dd>
                 </div>
