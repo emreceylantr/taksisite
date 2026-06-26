@@ -17,6 +17,7 @@ export const metadata: Metadata = {
   title: "Soli Taksi | Premium Taksi ve Transfer",
   description:
     "Mersin şehir içi yolculuk, havalimanı transferi ve kurumsal ulaşım için planlı ve güvenilir taksi hizmeti.",
+  viewport: "width=device-width, initial-scale=1, maximum-scale=1",
 };
 
 export default function RootLayout({
@@ -29,7 +30,7 @@ export default function RootLayout({
       lang="tr"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-cold">{children}</body>
     </html>
   );
 }

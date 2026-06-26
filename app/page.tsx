@@ -1,6 +1,7 @@
 import Image from "next/image";
 import MapSection from "./components/MapSection";
 import Reveal from "./components/Reveal";
+import MobileNav from "./components/MobileNav";
 
 const whatsappHref =
   "https://wa.me/905550331175?text=Merhaba%20Soli%20Taksi%2C%20Mersin%20i%C3%A7in%20taksi%20talep%20etmek%20istiyorum.";
@@ -43,7 +44,7 @@ const steps = [
 export default function Home() {
   return (
     <main className="min-h-screen bg-zinc-950 text-white">
-      <section className="relative isolate min-h-[92vh] overflow-hidden">
+      <section className="relative isolate min-h-[92svh] overflow-hidden sm:min-h-[92vh]">
         <Image
           src="/taxi-hero.png"
           alt="Soli Taksi aracı şehir caddesinde"
@@ -55,13 +56,20 @@ export default function Home() {
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(9,9,11,0.94)_0%,rgba(9,9,11,0.76)_44%,rgba(9,9,11,0.3)_100%)]" />
 
         <header className="relative z-10 mx-auto w-full max-w-7xl px-5 py-5 sm:px-8">
-          <div className="flex items-center justify-between gap-4 rounded border border-white/10 bg-zinc-950/45 px-4 py-3 backdrop-blur-md">
-            <a href="#" className="flex items-center gap-3" aria-label="Soli Taksi ana sayfa">
-              <span className="grid h-10 w-10 place-items-center rounded bg-yellow-400 font-black text-zinc-950">
+          <div className="flex items-center justify-between gap-3 rounded border border-white/10 bg-zinc-950/45 px-4 py-3 backdrop-blur-md sm:gap-4">
+            <a
+              href="#"
+              className="flex min-h-11 min-w-0 items-center gap-3"
+              aria-label="Soli Taksi ana sayfa"
+            >
+              <span className="grid h-10 w-10 shrink-0 place-items-center rounded bg-yellow-400 font-black text-zinc-950">
                 S
               </span>
-              <span className="text-lg font-bold tracking-wide">Soli Taksi</span>
+              <span className="text-base font-bold leading-tight tracking-wide min-[360px]:text-lg">
+                Soli Taksi
+              </span>
             </a>
+            <MobileNav />
             <nav className="hidden items-center gap-6 text-sm font-medium text-zinc-100 lg:flex">
               <a className="transition hover:text-yellow-300" href="#hizmetler">
                 Hizmetler
@@ -85,7 +93,7 @@ export default function Home() {
               </span>
               <a
                 href={whatsappHref}
-                className="rounded bg-yellow-400 px-4 py-2 text-sm font-bold text-zinc-950 transition hover:bg-yellow-300"
+                className="grid min-h-11 place-items-center rounded bg-yellow-400 px-4 text-sm font-bold text-zinc-950 transition hover:bg-yellow-300"
               >
                 WhatsApp
               </a>
@@ -93,15 +101,15 @@ export default function Home() {
           </div>
         </header>
 
-        <div className="relative z-10 mx-auto flex min-h-[calc(92vh-92px)] w-full max-w-7xl items-center px-5 pb-16 pt-10 sm:px-8">
+        <div className="relative z-10 mx-auto flex min-h-[calc(92svh-92px)] w-full max-w-7xl items-center px-5 pb-16 pt-10 sm:min-h-[calc(92vh-92px)] sm:px-8">
           <div className="max-w-2xl rounded border border-white/10 bg-white/10 p-5 backdrop-blur-md sm:p-8">
             <p className="mb-5 inline-flex rounded bg-yellow-400/15 px-3 py-1 text-sm font-semibold text-yellow-200">
               Mersin için planlı ve güvenilir taksi
             </p>
-            <h1 className="max-w-3xl text-5xl font-black leading-[0.98] tracking-normal sm:text-6xl lg:text-7xl">
+            <h1 className="max-w-3xl text-[2.65rem] font-black leading-[1.02] tracking-normal min-[360px]:text-5xl sm:text-6xl lg:text-7xl">
               Sade, temiz ve zamanında taksi hizmeti.
             </h1>
-            <p className="mt-6 max-w-xl text-lg leading-8 text-zinc-200">
+            <p className="mt-6 max-w-xl text-base leading-8 text-zinc-200 min-[360px]:text-lg">
               Soli Taksi; şehir içi yolculuk, havalimanı transferi ve kurumsal
               ulaşım için net iletişim, temiz araç ve zamanında varış odaklı
               servis sunar.
@@ -120,11 +128,13 @@ export default function Home() {
                 Hizmetleri gör
               </a>
             </div>
-            <dl className="mt-10 grid max-w-xl grid-cols-3 gap-3">
+            <dl className="mt-10 grid max-w-xl grid-cols-3 gap-2 min-[360px]:gap-3">
               {stats.map(([value, label]) => (
-                <div key={label} className="border-l border-yellow-300/70 pl-4">
-                  <dt className="text-2xl font-black text-yellow-300">{value}</dt>
-                  <dd className="mt-1 text-xs font-medium uppercase tracking-wide text-zinc-300">
+                <div key={label} className="border-l border-yellow-300/70 pl-3 min-[360px]:pl-4">
+                  <dt className="text-xl font-black text-yellow-300 min-[360px]:text-2xl">
+                    {value}
+                  </dt>
+                  <dd className="mt-1 text-[0.68rem] font-medium uppercase tracking-wide text-zinc-300 min-[360px]:text-xs">
                     {label}
                   </dd>
                 </div>
@@ -155,12 +165,12 @@ export default function Home() {
             {services.map((service, index) => (
               <Reveal key={service.title} delay={index * 0.08}>
                 <article
-                className="rounded border border-zinc-200 bg-zinc-50 p-6"
+                  className="rounded border border-zinc-200 bg-zinc-50 p-6"
                 >
                   <span className="text-sm font-black text-yellow-700">
                     0{index + 1}
                   </span>
-                  <h3 className="mt-5 text-2xl font-black">{service.title}</h3>
+                  <h3 className="mt-5 text-xl font-black">{service.title}</h3>
                   <p className="mt-4 leading-7 text-zinc-600">{service.text}</p>
                 </article>
               </Reveal>
@@ -204,7 +214,7 @@ export default function Home() {
           <h2 className="mt-3 max-w-2xl text-4xl font-black tracking-normal">
             Yolculuk talebi sade ilerler.
           </h2>
-          <div className="mt-10 grid gap-4 md:grid-cols-4">
+          <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
             {steps.map((step, index) => (
               <Reveal key={step} delay={index * 0.08}>
                 <div className="rounded border border-zinc-200 bg-zinc-50 p-6">
