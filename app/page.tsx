@@ -43,8 +43,8 @@ const steps = [
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-zinc-950 text-white">
-      <section className="relative isolate min-h-[92svh] overflow-hidden sm:min-h-[92vh]">
+    <main className="min-h-[100dvh] bg-zinc-950 text-white">
+      <section className="relative isolate min-h-[92dvh] overflow-hidden sm:min-h-[92vh]">
         <Image
           src="/taxi-hero.png"
           alt="Soli Taksi aracı şehir caddesinde"
@@ -103,38 +103,38 @@ export default function Home() {
 
         <div className="relative z-10 mx-auto flex min-h-[calc(92svh-92px)] w-full max-w-7xl items-center px-5 pb-16 pt-10 sm:min-h-[calc(92vh-92px)] sm:px-8">
           <div className="max-w-2xl rounded border border-white/10 bg-white/10 p-5 backdrop-blur-md sm:p-8">
-            <p className="mb-5 inline-flex rounded bg-yellow-400/15 px-3 py-1 text-sm font-semibold text-yellow-200">
+            <p className="mb-5 inline-flex rounded bg-yellow-400/15 px-3 py-1 text-xs font-semibold text-yellow-200 md:text-sm">
               Mersin için planlı ve güvenilir taksi
             </p>
-            <h1 className="max-w-3xl text-[2.65rem] font-black leading-[1.02] tracking-normal min-[360px]:text-5xl sm:text-6xl lg:text-7xl">
-              Sade, temiz ve zamanında taksi hizmeti.
+            <h1 className="max-w-3xl text-5xl font-black leading-[1.1] tracking-normal md:text-7xl">
+              Sade, temiz ve zamanında taksi hizmeti.<br className="hidden md:block" />
             </h1>
-            <p className="mt-6 max-w-xl text-base leading-8 text-zinc-200 min-[360px]:text-lg">
+            <p className="mt-6 max-w-xl text-sm leading-8 text-zinc-200 md:text-lg">
               Soli Taksi; şehir içi yolculuk, havalimanı transferi ve kurumsal
               ulaşım için net iletişim, temiz araç ve zamanında varış odaklı
               servis sunar.
             </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-8 flex flex-col w-full gap-3 sm:flex-row sm:w-auto">
               <a
                 href={whatsappHref}
-                className="rounded bg-yellow-400 px-6 py-4 text-center font-bold text-zinc-950 transition hover:bg-yellow-300"
+                className="rounded bg-yellow-400 px-6 py-4 text-center font-bold text-zinc-950 transition hover:bg-yellow-300 w-full sm:w-auto"
               >
                 Taksi çağır
               </a>
               <a
                 href="#hizmetler"
-                className="rounded border border-white/25 bg-white/5 px-6 py-4 text-center font-bold text-white transition hover:border-yellow-300 hover:text-yellow-200"
+                className="rounded border border-white/25 bg-white/5 px-6 py-4 text-center font-bold text-white transition hover:border-yellow-300 hover:text-yellow-200 w-full sm:w-auto"
               >
                 Hizmetleri gör
               </a>
             </div>
-            <dl className="mt-10 grid max-w-xl grid-cols-3 gap-2 min-[360px]:gap-3">
+            <dl className="mt-10 grid max-w-xl grid-cols-3 gap-2 md:gap-3">
               {stats.map(([value, label]) => (
-                <div key={label} className="border-l border-yellow-300/70 pl-3 min-[360px]:pl-4">
-                  <dt className="text-xl font-black text-yellow-300 min-[360px]:text-2xl">
+                <div key={label} className="border-l border-yellow-300/70 pl-3 md:pl-4">
+                  <dt className="text-lg font-black text-yellow-300 md:text-2xl">
                     {value}
                   </dt>
-                  <dd className="mt-1 text-[0.68rem] font-medium uppercase tracking-wide text-zinc-300 min-[360px]:text-xs">
+                  <dd className="mt-1 text-[10px] font-medium uppercase tracking-wide text-zinc-300 md:text-xs">
                     {label}
                   </dd>
                 </div>

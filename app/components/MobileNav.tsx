@@ -18,7 +18,7 @@ export default function MobileNav() {
     <div className="lg:hidden">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="text-white p-2"
+        className="text-white p-2 z-30 relative"
         aria-label="Menü"
       >
         <svg
@@ -38,25 +38,37 @@ export default function MobileNav() {
 
       <AnimatePresence>
         {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="absolute top-full left-0 right-0 z-20 mt-2 bg-white rounded-lg shadow-lg"
-          >
-            <nav className="flex flex-col p-4">
-              {navItems.map((item) => (
-                <a
-                  key={item.href}
-                  href={item.href}
-                  onClick={() => setIsOpen(false)}
-                  className="py-3 px-4 text-sm font-medium text-gray-900 hover:bg-gray-100 rounded-md transition-colors"
-                >
-                  {item.label}
-                </a>
-              ))}
-            </nav>
-          </motion.div>
+          <>
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsOpen(false)}
+              className="fixed inset-0 bg-black/50 backdrop-blur-sm z-20"
+            />
+            
+            {/* Mobile Menu */}
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              className="fixed top-0 left-0 right-0 z-30 bg-white shadow-2xl rounded-b-2xl"
+            >
+              <nav className="flex flex-col p-6 pt-12">
+                {navItems.map((item) => (
+                  <a
+                    key={item.href}
+                    href={item.href}
+                    onClick={() => setIsOpen(false)}
+                    className="py-4 px-2 text-base font-medium text-gray-900 hover:bg-yellow-50 hover:text-yellow-600 rounded-lg transition-all duration-200 border-b border-gray-100 last:border-b-0"
+                  >
+                    {item.label}
+                  </a>
+                ))}
+              </nav>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
     </div>
